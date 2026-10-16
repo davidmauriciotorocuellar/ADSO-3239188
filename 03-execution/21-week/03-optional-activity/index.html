@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reservas - MVC</title>
+    <!-- Aquí simularemos el CSS (layout) -->
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .form-container { border: 1px solid #ccc; padding: 20px; margin-bottom: 20px; width: 300px;}
+        input { display: block; margin-bottom: 10px; width: 90%; padding: 8px;}
+        button { padding: 10px; background-color: #0056b3; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Gestión de Reservas y Clientes</h1>
+    
+    <!-- Contenedor donde la Vista de JS inyectará el formulario -->
+    <div id="app-view"></div>
+
+    <!-- 1. Importar el Modelo (M) -->
+    <script src="model/client/ClientModel.js"></script>
+    <!-- 2. Importar la Vista (V) -->
+    <script src="view/client/ClientView.js"></script>
+    <!-- 3. Importar el Controlador (C) -->
+    <script src="controller/client/ClientController.js"></script>
+    
+    <script>
+        // Inicializar el patrón MVC cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', () => {
+            const app = new ClientController(new ClientModel(), new ClientView());
+        });
+    </script>
+</body>
+</html>
